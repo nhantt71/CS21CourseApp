@@ -11,8 +11,11 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ['pk', 'subject']
+
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Course)
-
 
 
