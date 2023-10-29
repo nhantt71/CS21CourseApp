@@ -37,8 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'courses.apps.CoursesConfig'
+    'courses.apps.CoursesConfig',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
+
+CKEDITOR_UPLOAD_PATH = "ckeditor/images/"
+
+MEDIA_ROOT = '%s/courses/static/' % BASE_DIR
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
