@@ -41,7 +41,7 @@ class Lesson(BaseModel):
     subject = models.CharField(max_length=255, null=False)
     content = RichTextField(null=True)
     image = models.ImageField(upload_to='lessons/%Y/%m')
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_query_name='courses')
     tags = models.ManyToManyField('Tag')
 
     class Meta:
@@ -50,3 +50,6 @@ class Lesson(BaseModel):
 
 class Tag(BaseModel):
     name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
